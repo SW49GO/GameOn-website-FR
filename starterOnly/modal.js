@@ -73,7 +73,12 @@ function validate() {
   let validQuantity = formData[4].getElementsByTagName('input')[0].value;
   stockageForm('quantity', validQuantity);
   validQuantity =
-    Number(validQuantity) <= 99 && Number(validQuantity) >= 0 ? true : false;
+    validQuantity != '' &&
+    !isNaN(validQuantity) &&
+    validQuantity >= 0 &&
+    validQuantity <= 99
+      ? true
+      : false;
   errorMessage(validQuantity, 4);
 
   // Validation of Location
