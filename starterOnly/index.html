@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="utf-8" />
@@ -46,35 +46,37 @@
       <div class="hero-img">
         <img src="./bg_img.jpg" alt="img" />
       </div>
-      <button class="btn-signup modal-btn">
-        je m'inscris
-      </button>
     </div>
 
     <div class="bground">
       <div class="content">
         <span class="close"></span>
         <div class="modal-body">
-          <form name="reserve" action="index.html" method="get" onsubmit="return validate();">
+          <form name="reserve" action="index.html" method="get" onsubmit="return validate();" novalidate>
             <div class="formData">
               <label for="first">Prénom</label><br>
-              <input class="text-control" type="text" id="first" name="first" minlength="2" /><br>
+              <input class="text-control" type="text" id="first" name="first" minlength="2" required /><br>
+              <p class="error-message validForm">Le prénom doit contenir au moins 2 caractères.</p>
             </div>
             <div class="formData">
               <label for="last">Nom</label><br>
-              <input class="text-control" type="text" id="last" name="last" /><br>
+              <input class="text-control" type="text" id="last" name="last" minlength="2" required /><br>
+              <p class="error-message validForm">Veuillez entrer 2 caractères ou plus pour le champ du nom.</p>
             </div>
             <div class="formData">
               <label for="email">E-mail</label><br>
-              <input class="text-control" type="email" id="email" name="email" /><br>
+              <input class="text-control" type="email" id="email" name="email" required /><br>
+              <p class="error-message validForm">Veuillez renseigner ce champ [Doit inclure '@'].</p>
             </div>
             <div class="formData">
               <label for="birthdate">Date de naissance</label><br>
-              <input class="text-control" type="date" id="birthdate" name="birthdate" /><br>
+              <input class="text-control" type="date" id="birthdate" name="birthdate" required /><br>
+              <p class="error-message validForm">Vous devez entrer votre date de naissance.</p>
             </div>
             <div class="formData">
               <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-              <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+              <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" required>
+              <p class="error-message validForm">Veuillez renseigner ce champ [0-99].</p>
             </div>
             <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
             <div class="formData">
@@ -102,6 +104,7 @@
               <label class="checkbox-label" for="location6">
                 <span class="checkbox-icon"></span>
                 Portland</label>
+              <p class="error-message validForm">Vous devez choisir une option.</p>
             </div>
 
             <div class="formData">
@@ -111,10 +114,11 @@
                 J'ai lu et accepté les conditions d'utilisation.
               </label>
               <br>
+              <p class="error-message validForm">Vous devez vérifier que vous acceptez les termes et conditions.</p>
               <input class="checkbox-input" type="checkbox" id="checkbox2" />
               <label class="checkbox2-label" for="checkbox2">
                 <span class="checkbox-icon"></span>
-                Je Je souhaite être prévenu des prochains évènements.
+                Je souhaite être prévenu des prochains évènements.
               </label>
               <br>
             </div>
