@@ -13,6 +13,7 @@ const modalBtn = document.querySelectorAll('.modal-btn');
 const formData = document.querySelectorAll('.formData');
 const modalClose = document.querySelector('.close');
 const content = document.querySelector('.content');
+const errorMessages = document.querySelectorAll('.error-message');
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener('click', launchModal));
@@ -24,6 +25,12 @@ function launchModal() {
 
 // close modal form
 modalClose.addEventListener('click', function () {
+  for (let i = 0; i < errorMessages.length; i++) {
+    errorMessages[i].classList.add('validForm');
+  }
+  for (let i = 0; i < formData.length; i++) {
+    formData[i].getElementsByTagName('input')[0].classList.remove('noValid');
+  }
   modalbg.style.display = 'none';
 });
 
@@ -66,7 +73,7 @@ function validate() {
   let validQuantity = formData[4].getElementsByTagName('input')[0].value;
   stockageForm('quantity', validQuantity);
   validQuantity =
-    Number(validQuantity) <= 99 && Number(validQuantity) > 0 ? true : false;
+    Number(validQuantity) <= 99 && Number(validQuantity) >= 0 ? true : false;
   errorMessage(validQuantity, 4);
 
   // Validation of Location
