@@ -1,5 +1,5 @@
 :root {
-  --font-default: 'DM Sans', Arial, Helvetica, sans-serif;
+  --font-default: 'DMSans', Arial, Helvetica, sans-serif;
   --modal-duration: 0.8s;
 }
 * {
@@ -330,11 +330,11 @@ input {
 }
 
 .error-message {
-  color: red;
-  font-size: 1rem;
+  color: #ff0000;
+  font-size: 0.8rem;
 }
 .noValid {
-  border: 2px solid red;
+  border: 2px solid #ff0000;
 }
 .validForm {
   display: none;
@@ -398,7 +398,7 @@ input {
   }
 
   .modal-btn {
-    margin-top: 100px;
+    margin-top: 120px;
   }
   .hero-headline {
     font-size: 4rem;
