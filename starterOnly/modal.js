@@ -25,9 +25,11 @@ function launchModal() {
 
 // close modal form
 modalClose.addEventListener('click', function () {
+  // add class "validForm" to not show error message
   for (let i = 0; i < errorMessages.length; i++) {
     errorMessages[i].classList.add('validForm');
   }
+  // remove class "noValid" for red border
   for (let i = 0; i < formData.length; i++) {
     formData[i].getElementsByTagName('input')[0].classList.remove('noValid');
   }
@@ -108,8 +110,8 @@ function validate() {
 }
 /**
  * Fonction to show or not the invalid message and border red
- * @param {the name of each validation fields} name
- * @param {number of the formData div} nbForm
+ * @param {boolean} name // result of each validation field
+ * @param {integer} nbForm // number of each formaData
  * @returns
  */
 function errorMessage(name, nbForm) {
@@ -145,6 +147,9 @@ function checkLocation() {
 
 /**
  * Function to stock in localStorage informations
+ * @param {string} name
+ * @param {string or boolean} value
+ * @returns
  */
 function stockageForm(name, value) {
   window.localStorage.setItem(name, value);
