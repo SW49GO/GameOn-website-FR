@@ -161,33 +161,42 @@ function stockageForm(name, value) {
 const urlParams = new URLSearchParams(window.location.search);
 // Retrieving the value of the "location" field
 const validParam = urlParams.get('location');
+
 // Display of the confirmation modal
 if (validParam != null) {
   modalbg.style.display = 'block';
   modalClose.style.display = 'none';
   document.getElementsByName('reserve')[0].style.display = 'none';
+
   // Creation of [div.final]
   let containerFinal = document.createElement('div');
   containerFinal.classList.add('final');
+
   // Creation of paragraph [p.final-paragraph]
   let paragraph = document.createElement('p');
   paragraph.classList.add('final-paragraph');
+
   // Content of paragraph
   paragraph.innerHTML = 'Merci pour <br> votre inscription';
+
   // Creation of the close button [button.btn-signup.closeButtonFinal]
   let button = document.createElement('button');
   button.classList.add('btn-signup', 'closeButtonFinal');
   button.textContent = 'Fermer';
+
   // Inserting the paragraph and the button in the [div.final]
   containerFinal.appendChild(paragraph);
   containerFinal.appendChild(button);
+
   // Creation of the cross to close the modal [span.closeFinal]
   let closeFinal = document.createElement('span');
   closeFinal.classList.add('closeFinal');
+
   // Insert in [div.content]
   content.appendChild(closeFinal);
   content.appendChild(containerFinal);
   const closeButtonFinal = document.querySelector('.closeButtonFinal');
+
   // Closure of the modal by the button
   if (closeButtonFinal != null) {
     closeButtonFinal.addEventListener('click', function () {

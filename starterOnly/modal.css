@@ -134,7 +134,6 @@ input {
 
 .modal-body {
   position: relative;
-  text-align: center;
   padding: 15px 8%;
   margin: 15px auto;
 }
@@ -330,11 +329,11 @@ input {
 }
 
 .error-message {
-  color: #ff0000;
+  color: #ff4e60;
   font-size: 0.8rem;
 }
 .noValid {
-  border: 2px solid #ff0000;
+  border: 2px solid #ff4e60;
 }
 .validForm {
   display: none;
@@ -495,7 +494,6 @@ input {
 
   .hero-headline,
   .hero-text {
-    text-align: center;
     width: 98%;
     white-space: unset;
     color: #232323;
