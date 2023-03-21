@@ -60,12 +60,7 @@ function validate() {
   // Validation of Email
   let email = formData[2].getElementsByTagName('input')[0].value;
   let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  let validEmail;
-  if (emailRegex.test(email)) {
-    validEmail = true;
-  } else {
-    validEmail = false;
-  }
+  let validEmail = emailRegex.test(email);
   stockageForm('email', email);
   errorMessage(validEmail, 2);
 
