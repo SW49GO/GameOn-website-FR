@@ -9,14 +9,14 @@ function editNav() {
 
 // DOM Elements
 const modalbg = document.querySelector('.bground');
-const modalBtn = document.querySelectorAll('.modal-btn');
+const modalBtn = document.querySelector('.modal-btn');
 const formData = document.querySelectorAll('.formData');
 const modalClose = document.querySelector('.close');
 const content = document.querySelector('.content');
 const errorMessages = document.querySelectorAll('.error-message');
 
 // launch modal event
-modalBtn.forEach((btn) => btn.addEventListener('click', launchModal));
+modalBtn.addEventListener('click', launchModal);
 
 // launch modal form
 function launchModal() {
@@ -59,9 +59,13 @@ function validate() {
 
   // Validation of Email
   let email = formData[2].getElementsByTagName('input')[0].value;
-  let validEmail = formData[2]
-    .getElementsByTagName('input')[0]
-    .reportValidity();
+  let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  let validEmail;
+  if (emailRegex.test(email)) {
+    validEmail = true;
+  } else {
+    validEmail = false;
+  }
   stockageForm('email', email);
   errorMessage(validEmail, 2);
 
